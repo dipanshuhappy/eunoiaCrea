@@ -25,7 +25,7 @@ env = environ.Env(
     DB_HOST = (str,"")
 )
 
-ASGI_APPLICATION = "mysite.asgi.application"
+ASGI_APPLICATION = "eunoiaCrea.routing.application"
  
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,21 +46,24 @@ ALLOWED_HOSTS = []
 
 STATIC_URL = "/static/"
 
-STATICFILES_DIR = "/static/"
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, "static"),
+]
 
-STATIC_ROOT = "static"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_LOCATION = "static"
 # Application definition
 
 INSTALLED_APPS = [
-    "daphne",
+    'channels',
+    'django_live_templates',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "channels",
+
     'participants'
 ]
 
@@ -75,6 +78,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'eunoiaCrea.urls'
+
+
+SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
 
 TEMPLATES = [
     {
@@ -117,6 +123,15 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://localhost:6379/0',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

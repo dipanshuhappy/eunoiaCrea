@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load django_live_template %}
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -9,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard</title>
     <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" />
+    <script type="text/javascript" src="{% static 'js/django_live_template.js' %}"></script>
   </head>
   <body>
     <style>
@@ -153,6 +156,9 @@ input[type=text], textarea, input[type=email], input[type=password], input[type=
           </tbody>
         </table>
       </section>
+      {% if is_django_live_template %}
+<style onload="alert('Hello World!');"></style>
+{% endif %}
   </body>
   <script>
     const rankingsBody = document.querySelector("#rankings > tbody");

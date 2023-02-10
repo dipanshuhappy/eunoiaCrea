@@ -7,5 +7,5 @@ class Participant(models.Model):
     
     year_and_school = models.TextField(max_length=255)
     submission_file = models.TimeField(max_length=255)
-    scores = models.BigIntegerField()
+    scores = models.BigIntegerField(default=0)
 
