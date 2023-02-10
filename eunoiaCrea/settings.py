@@ -25,7 +25,7 @@ env = environ.Env(
     DB_HOST = (str,"")
 )
 
-ASGI_APPLICATION = "eunoiaCrea.routing.application"
+# ASGI_APPLICATION = "eunoiaCrea.routing.application"
  
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -55,8 +55,7 @@ STATICFILES_LOCATION = "static"
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
-    'django_live_templates',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -80,7 +79,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'eunoiaCrea.urls'
 
 
-SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
+# SWAMP_DRAGON_CONNECTION = ('swampdragon_auth.socketconnection.HttpDataConnection', '/data')
 
 TEMPLATES = [
     {
