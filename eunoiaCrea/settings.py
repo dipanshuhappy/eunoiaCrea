@@ -25,6 +25,8 @@ env = environ.Env(
     DB_HOST = (str,"")
 )
 
+ASGI_APPLICATION = "mysite.asgi.application"
+ 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
@@ -51,12 +53,14 @@ STATICFILES_LOCATION = "static"
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "channels",
     'participants'
 ]
 
