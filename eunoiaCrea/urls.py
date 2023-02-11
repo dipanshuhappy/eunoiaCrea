@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from participants.views import leadboard
+from participants.views import leadboard,leaderboard_data
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',leadboard)
+    path('',leadboard),
+    path('data',leaderboard_data)
 ]

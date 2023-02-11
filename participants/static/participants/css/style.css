@@ -47,13 +47,14 @@ input[type="date"],
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: #5055cb;
+  background: #bcaca4;
   padding: 10px 25px;
   border-radius: 10px;
-  border: 1px solid #686ef9;
+  border: 1px solid #686766;
 }
 .ladder-title {
   flex: 2;
+  color: #241e16 !important;
 }
 .ladder-search {
   flex: 1;
@@ -61,7 +62,7 @@ input[type="date"],
 }
 .ladder-title {
   font-size: 20px;
-  color: #888dff !important;
+
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -89,6 +90,10 @@ input[type="date"],
 .leaderboard-results {
   text-align: left;
   border-collapse: collapse;
+  border-radius: 200px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 1px #666;
+  margin-top: 10px;
 }
 .leaderboard-results thead th {
   padding: 25px;
@@ -96,24 +101,32 @@ input[type="date"],
   font-size: 14px;
   font-weight: bold;
 }
+
 .leaderboard-results tbody td {
   padding: 15px 25px;
   background: #1a1a1a;
   font-size: 16px;
   border-bottom: 5px solid #232323;
 }
+.leaderboard-results {
+  border-radius: 20px;
+}
 .leaderboard-results tbody td:nth-of-type(7) {
   font-weight: bold;
 }
 .leaderboard-results tbody tr:hover td {
-  background: #1d1d1d;
+  background: #241e16;
+}
+.leaderboard-results tbody tr {
+  background-color: #373737 !important;
 }
 .leaderboard-results tbody tr {
   color: #747474;
 }
-.leaderboard-results tbody tr:first-child {
-  color: #686ef9;
+.leaderboard-results tbody tr:nth-child(-n + 3) {
+  color: gold;
 }
+
 .leaderboard-results tbody span {
   font-weight: bold;
   padding: 10px 15px;
